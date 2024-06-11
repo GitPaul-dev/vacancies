@@ -1,0 +1,36 @@
+@layer default {
+
+  body {
+    font-family: GothamPro, system-ui, sans-serif;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2,
+  .bold-descr {
+    font-weight: var(--font-weight-2);
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  .btn {
+    font-weight: var(--font-weight-2);
+    font-size: 12px;
+    line-height: 167%;
+    text-align: center;
+  }
+
+  a {
+    font-weight: var(--font-weight-2);
+  }
+
+  p {
+    font-weight: var(--font-weight-1);
+  }
+}

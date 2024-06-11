@@ -1,0 +1,76 @@
+@layer reset {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  header,
+  article:not(:first-of-type),
+  footer {
+    margin-inline: auto;
+    padding-inline: var(--size-2);
+    max-inline-size: var(--max-site-width);
+  }
+
+  ul,
+  ol {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  dialog,
+  input {
+    margin: 0;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block flow;
+    max-inline-size: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
