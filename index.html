@@ -9,26 +9,37 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/default.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/svg+xml">
   <title>Вакансии - Пустовский лесокомбинат</title>
 </head>
 
 <body>
   <header>
-    <button></button>
-    <dialog>
+    <button class="nav-bar-btn" popovertarget="nav-bar" popovertargetaction="toggle">
+      <span></span>
+    </button>
+    <dialog id="nav-bar" class="nav-bar" popover>
       <nav>
         <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+          <li><a href="https://pplk.ru/" target="_blank">Главная</a></li>
+          <li><a href="https://pplk.ru/doma/" target="_blank">Дома</a></li>
+          <li><a href="https://pplk.ru/bani/" target="_blank">Бани</a></li>
         </ul>
       </nav>
     </dialog>
-    <svg></svg>
-    <address>
-      <a href=""></a>
-      <a href=""></a>
+    <a class="logo-link" href="/">
+      <img src="./img/logo-1.svg" alt="Логотип компании Пестовский лесокомбинат">
+    </a>
+    <address class="phones">
+      <ul>
+        <li>
+          <a href="tel:+78126037222" target="_blank" title="Телефон в Санкт-Петебрурге">8 (812) 603-72-22</a>
+        </li>
+        <li>
+          <a href="tel:+74993807733" target="_blank" title="Телефон в Москве">8 (499) 380-77-33</a>
+        </li>
+      </ul>
     </address>
   </header>
 

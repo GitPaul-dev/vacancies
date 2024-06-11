@@ -11,11 +11,10 @@
   }
 
   header,
-  article:not(:first-of-type),
+  section:not(:first-of-type),
   footer {
     margin-inline: auto;
     padding-inline: var(--size-2);
-    max-inline-size: var(--max-site-width);
   }
 
   ul,
@@ -27,10 +26,12 @@
   a {
     display: block;
     text-decoration: none;
+    color: inherit;
   }
 
   button {
     border: none;
+    padding: 0;
     background: none;
     cursor: pointer;
   }

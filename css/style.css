@@ -1,1 +1,73 @@
-@layer style {}
+@layer style {
+
+  header {
+    --_extreme-elements-width: 26%;
+    --_logo-link-width: 127px;
+
+    display: block flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--size-1);
+    background-color: var(--color-2);
+
+    .nav-bar-btn {
+      --_nav-bar-line-width: 24px;
+      --_nav-bar-line-height: 3px;
+      --_nav-bar-line-inset-block: 8px;
+
+      justify-content: center;
+      gap: var(--_menu-gap);
+      block-size: 40px;
+      text-align: start;
+
+      & span {
+        position: relative;
+      }
+
+      & span,
+      & span::before,
+      & span::after {
+        content: "";
+        position: absolute;
+        inline-size: var(--_nav-bar-line-width);
+        block-size: var(--_nav-bar-line-height);
+        background-color: var(--color-1);
+      }
+
+      & span::before,
+      & span::after {
+        inset-inline-start: 0;
+      }
+
+      & span::before {
+        inset-block-start: calc(var(--_nav-bar-line-inset-block) * -1);
+      }
+
+      & span::after {
+        inset-block-start: var(--_nav-bar-line-inset-block);
+      }
+    }
+
+    .logo-link {
+      display: block flex;
+      justify-content: center;
+      inline-size: var(--_logo-link-width);
+
+      & img {
+        inline-size: 50%;
+      }
+    }
+
+    .phones {
+      font-size: 9px;
+      line-height: 167%;
+      text-align: center;
+      color: var(--color-1);
+    }
+
+    .nav-bar-btn,
+    .phones {
+      inline-size: var(--_extreme-elements-width);
+    }
+  }
+}
