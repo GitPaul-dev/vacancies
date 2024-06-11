@@ -1,13 +1,20 @@
 @layer style {
 
+  :root {
+    --header-height: 57px;
+  }
+
   header {
-    --_extreme-elements-width: 26%;
+    --_extreme-elements-width: 20%;
     --_logo-link-width: 127px;
 
+    position: fixed;
     display: block flex;
     justify-content: space-between;
     align-items: center;
     padding-block: var(--size-1);
+    inline-size: 100vi;
+    block-size: var(--header-height);
     background-color: var(--color-2);
 
     .nav-bar-btn {
@@ -15,7 +22,9 @@
       --_nav-bar-line-height: 3px;
       --_nav-bar-line-inset-block: 8px;
 
-      justify-content: center;
+      display: block flex;
+      align-items: center;
+      justify-content: flex-start;
       gap: var(--_menu-gap);
       block-size: 40px;
       text-align: start;
@@ -54,20 +63,50 @@
       inline-size: var(--_logo-link-width);
 
       & img {
-        inline-size: 50%;
+        inline-size: 51%;
       }
-    }
-
-    .phones {
-      font-size: 9px;
-      line-height: 167%;
-      text-align: center;
-      color: var(--color-1);
     }
 
     .nav-bar-btn,
     .phones {
       inline-size: var(--_extreme-elements-width);
+    }
+
+    .phones {
+      --_extreme-elements-width: 26%;
+      font-size: 9px;
+      line-height: 167%;
+      text-align: center;
+      color: var(--color-1);
+    }
+  }
+
+  main {
+    padding-block-start: var(--header-height);
+  }
+
+  .hero {
+    display: block flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-block-end: var(--size-7);
+    min-block-size: 500px;
+    background-image: url('../img/hero-img.webp');
+    background-repeat: no-repeat;
+    background-size: 243%;
+    background-position: 75% 43%;
+
+    & p {
+      margin-block-end: var(--size-5);
+      padding-block-start: var(--size-2);
+      font-weight: var(--font-weight-2);
+      font-size: 18px;
+      color: var(--color-1);
+    }
+
+    & btn {
+      padding-inline: var(--size-4);
     }
   }
 }
