@@ -14,8 +14,10 @@
 
   h2,
   .bold-descr {
+    padding-block-end: var(--size-5);
     font-weight: var(--font-weight-2);
     font-size: 18px;
+    text-align: center;
     text-transform: uppercase;
     color: var(--color-4);
   }
@@ -38,5 +40,6 @@
 
   p {
     font-weight: var(--font-weight-1);
+    color: var(--color-1);
   }
 }

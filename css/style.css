@@ -7,7 +7,6 @@
   header {
     --_extreme-elements-width: 20%;
     --_logo-link-width: 127px;
-
     position: fixed;
     display: block flex;
     justify-content: space-between;
@@ -21,7 +20,6 @@
       --_nav-bar-line-width: 24px;
       --_nav-bar-line-height: 3px;
       --_nav-bar-line-inset-block: 8px;
-
       display: block flex;
       align-items: center;
       justify-content: flex-start;
@@ -107,6 +105,48 @@
 
     & btn {
       padding-inline: var(--size-4);
+    }
+  }
+
+  .about {
+    --_counter-width: 80px;
+    --_counter-height: 70px;
+    --_about-gap: var(--size-5);
+    padding-block: var(--size-7);
+    background-color: var(--color-3);
+
+    & :where(ul, li) {
+      display: block flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--_about-gap);
+    }
+
+    & li {
+      --_about-gap: var(--size-2);
+    }
+
+    & li:first-child span {
+      max-inline-size: 230px;
+    }
+
+    & span {
+      display: block grid;
+      place-content: center;
+      inline-size: var(--_counter-width);
+      block-size: var(--_counter-height);
+      border: 1px solid var(--color-7);
+      border-radius: 5px;
+      font-weight: var(--font-weight-2);
+      font-size: 24px;
+      line-height: 167%;
+      color: var(--color-5);
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 10px 0 #b6ffba;
+    }
+
+    & p {
+      text-align: center;
     }
   }
 }
