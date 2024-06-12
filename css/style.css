@@ -88,7 +88,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-block-end: var(--size-7);
     min-block-size: 500px;
     background-image: url('../img/hero-img.webp');
     background-repeat: no-repeat;
@@ -112,7 +111,6 @@
     --_counter-width: 80px;
     --_counter-height: 70px;
     --_about-gap: var(--size-5);
-    padding-block: var(--size-7);
     background-color: var(--color-3);
 
     & :where(ul, li) {
@@ -147,6 +145,28 @@
 
     & p {
       text-align: center;
+    }
+  }
+
+  .vacancies {
+    background-color: var(--color-3);
+
+    & h2 {
+      text-align: start;
+    }
+
+    .tab {
+      padding-block: 6px;
+      padding-inline: 12px;
+    }
+
+    & .tab:has(input:checked) {
+      color: var(--color-3);
+      background-color: var(--color-4);
+    }
+
+    & .vacancy-descr:not(:first-of-type) {
+      display: none;
     }
   }
 }

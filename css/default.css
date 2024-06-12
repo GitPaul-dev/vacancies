@@ -4,10 +4,13 @@
     font-family: GothamPro, system-ui, sans-serif;
   }
 
+  section {
+    padding-block: var(--size-7);
+  }
+
   h1 {
     font-size: 30px;
     line-height: 120%;
-    text-transform: uppercase;
     text-align: center;
     color: var(--color-1);
   }
@@ -18,8 +21,27 @@
     font-weight: var(--font-weight-2);
     font-size: 18px;
     text-align: center;
-    text-transform: uppercase;
     color: var(--color-4);
+  }
+
+  h1,
+  h2,
+  .tab,
+  .bold-descr {
+    text-transform: uppercase;
+  }
+
+  .tab-wrapper {
+    display: block flex;
+    flex-wrap: wrap;
+    gap: var(--size-1);
+  }
+
+  .tab {
+    border: 2px solid var(--color-4);
+    border-radius: 5px;
+    font-size: 10px;
+    color: var(--color-1);
   }
 
   .btn {
@@ -38,8 +60,22 @@
     font-weight: var(--font-weight-2);
   }
 
+  .hidden-radio {
+    position: fixed;
+    padding: 0;
+    outline: none;
+    appearance: none;
+    pointer-events: none;
+    transform: scale(0);
+  }
+
   p {
     font-weight: var(--font-weight-1);
     color: var(--color-1);
   }
+
+  label {
+    cursor: pointer;
+  }
+
 }
