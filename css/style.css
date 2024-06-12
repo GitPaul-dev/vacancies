@@ -8,6 +8,7 @@
     --_extreme-elements-width: 20%;
     --_logo-link-width: 127px;
     position: fixed;
+    z-index: 1;
     display: block flex;
     justify-content: space-between;
     align-items: center;
@@ -149,13 +150,19 @@
   }
 
   .vacancies {
+    display: block flex;
+    flex-direction: column;
     background-color: var(--color-3);
 
     & h2 {
       text-align: start;
     }
 
-    .tab {
+    & .tab-wrapper {
+      margin-block-end: var(--size-5);
+    }
+
+    & .tab {
       padding-block: 6px;
       padding-inline: 12px;
     }
@@ -165,8 +172,133 @@
       background-color: var(--color-4);
     }
 
-    & .vacancy-descr:not(:first-of-type) {
+    & .spoiler-wrapper {
       display: none;
+    }
+
+    & .tab-wrapper:has(.tab:first-child input:checked)~.spoiler-wrapper:first-of-type {
+      display: block flow;
+    }
+
+    & .tab-wrapper:has(.tab:nth-child(2) input:checked)~.spoiler-wrapper:nth-of-type(2) {
+      display: block flow;
+    }
+
+    & .tab-wrapper:has(.tab:nth-child(3) input:checked)~.spoiler-wrapper:nth-of-type(3) {
+      display: block flow;
+    }
+
+    & .tab-wrapper:has(.tab:nth-child(4) input:checked)~.spoiler-wrapper:nth-of-type(4) {
+      display: block flow;
+    }
+
+    & .tab-wrapper:has(.tab:last-child input:checked)~.spoiler-wrapper:last-of-type {
+      display: block flow;
+    }
+
+    & .spoiler:not(:last-of-type) {
+      margin-block-end: var(--size-3);
+    }
+
+    & .spoiler {
+      display: block flow;
+      border: 3px solid #999;
+      border-radius: 30px;
+      padding: 30px;
+
+      & div {
+        position: relative;
+      }
+
+      & :where(h4, .salary) {
+        position: relative;
+        padding-inline-start: var(--size-5);
+        font-size: 16px;
+      }
+
+      & h4 {
+        margin-block-end: var(--size-3);
+        color: var(--color-1);
+      }
+
+      & .salary {
+        margin-block-end: var(--size-1);
+        font-weight: var(--font-weight-2);
+        text-transform: uppercase;
+        color: var(--color-5);
+      }
+
+      & svg {
+        position: absolute;
+        inset-inline-end: 0;
+        inset-block: 0;
+        margin-block: auto;
+      }
+
+      & :where(h5, li p) {
+        font-weight: 700;
+        font-size: 12px;
+        color: #fff;
+      }
+
+      & h5 {
+        line-height: 200%;
+      }
+
+      & li {
+        position: relative;
+        padding-inline-start: var(--size-3);
+        line-height: 100%;
+      }
+
+      & li::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: 6px;
+        inset-block-start: 5px;
+        border-radius: 50%;
+        inline-size: 4px;
+        block-size: 4px;
+        background-color: var(--color-1);
+      }
+    }
+
+    & .spoiler-descr {
+      display: none;
+    }
+
+    & .spoiler:has(input:checked) .spoiler-descr {
+      display: block flow;
+    }
+
+    & .spoiler:has(input:checked) svg {
+      transform: rotate(45deg);
+    }
+
+    & .spoiler h4::before,
+    & .salary::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block: 0;
+      margin-block: auto;
+      inline-size: 25px;
+      block-size: 25px;
+      background-repeat: no-repeat;
+    }
+
+    & .spoiler h4::before {
+      background-image: url('../img/vacancies-img-1.svg');
+    }
+
+    & .salary::before {
+      background-image: url('../img/vacancies-img-2.svg');
+    }
+
+    & .btn {
+      align-self: center;
+      margin-block-start: var(--size-5);
+      inline-size: fit-content;
     }
   }
 }

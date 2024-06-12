@@ -60,7 +60,7 @@
     font-weight: var(--font-weight-2);
   }
 
-  .hidden-radio {
+  .hidden-input {
     position: fixed;
     padding: 0;
     outline: none;
@@ -75,6 +75,8 @@
   }
 
   label {
+    inline-size: 100%;
+    block-size: 100%;
     cursor: pointer;
   }
 
