@@ -213,16 +213,15 @@
       & :where(h4, .salary) {
         position: relative;
         padding-inline-start: var(--size-5);
-        font-size: 16px;
       }
 
       & h4 {
         margin-block-end: var(--size-3);
-        color: var(--color-1);
       }
 
       & .salary {
         margin-block-end: var(--size-1);
+        font-size: 16px;
         font-weight: var(--font-weight-2);
         text-transform: uppercase;
         color: var(--color-5);
@@ -263,10 +262,6 @@
       }
     }
 
-    & .spoiler-descr {
-      display: none;
-    }
-
     & .spoiler:has(input:checked) .spoiler-descr {
       display: block flow;
     }
@@ -301,4 +296,54 @@
       inline-size: fit-content;
     }
   }
+
+  .advantages {
+    --_spoiler-border-width: 2px;
+    --_title-max-width: 80vi;
+    --_label-padding-inline: var(--size-2);
+    padding-inline: 0;
+    background-color: var(--color-2);
+
+    & .spoiler {
+      border-bottom: var(--_spoiler-border-width) solid var(--color-4);
+    }
+
+    & label {
+      display: block flow;
+      padding-inline: var(--_label-padding-inline);
+      padding-block: var(--size-2) calc(var(--size-2) - var(--_spoiler-border-width));
+    }
+
+    & label:has(input:checked) .spoiler-descr {
+      display: block flow;
+    }
+
+    & label:has(input:checked) h3::after {
+      transform: rotate(45deg);
+    }
+
+    & h3 {
+      position: relative;
+      max-inline-size: var(--_title-max-width);
+    }
+
+    & h3::after {
+      --_inset-coefficient: calc(var(--_label-padding-inline) * 2);
+      content: "";
+      position: absolute;
+      inset-inline-end: calc((100vi - var(--_title-max-width)) * -1 + var(--_inset-coefficient));
+      inset-block: 0;
+      margin-block: auto;
+      inline-size: 25px;
+      block-size: 26px;
+      background-image: url('../img/spoiler-svg.svg');
+      background-repeat: no-repeat;
+    }
+
+    & .spoiler-descr {
+      padding-block-start: var(--size-3);
+    }
+  }
+
+
 }
