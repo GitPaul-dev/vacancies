@@ -9,7 +9,7 @@
     --_extreme-elements-width: 20%;
     --_logo-link-width: 127px;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     display: block flex;
     justify-content: space-between;
     align-items: center;
@@ -341,6 +341,186 @@
     }
   }
 
+  .career {
+    --_slide-gap: var(--size-2);
+    --_slide-img-size: calc(100vi / 3 * 2);
+    --swiper-navigation-top-offset: calc(var(--_slide-img-size) / 2);
+    --swiper-navigation-color: var(--color-1);
+    background-color: var(--color-2);
+
+    &>p {
+      margin-block-end: var(--size-5);
+      font-weight: var(--font-weight-2);
+      font-size: 14px;
+      line-height: 143%;
+
+      & span {
+        display: block flow;
+        padding-block-start: var(--size-3);
+      }
+    }
+
+    & .swiper-slide div {
+      display: block flex;
+      flex-direction: column;
+      gap: var(--size-2);
+    }
+
+    & :where(picture, h3) {
+      align-self: center;
+    }
+
+    & h3 {
+      font-size: 16px;
+      line-height: 125%;
+      text-align: center;
+      color: var(--color-1);
+
+      & span {
+        display: block flow;
+        font-weight: var(--font-weight-1);
+        font-size: 14px;
+      }
+    }
+
+    & .swiper-slide li {
+      position: relative;
+      padding-inline-start: var(--size-4);
+      font-size: 14px;
+    }
+
+    & .swiper-slide li:not(:last-child) {
+      margin-block-end: var(--size-3);
+    }
+
+    & .swiper-slide li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 15px;
+      inset-block-start: 6px;
+      border-radius: 50%;
+      inline-size: 5px;
+      block-size: 5px;
+      background-color: var(--color-1);
+    }
+
+    & .swiper-slide picture {
+      position: relative;
+    }
+
+    & .swiper-slide picture::before,
+    & .swiper-slide picture::after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inline-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    & .swiper-slide picture::before {
+      block-size: 100%;
+      background-image: url('../img/career-glare.svg');
+    }
+
+    & .swiper-slide picture::after {
+      block-size: 12px;
+      background-image: url('../img/career-rect.svg');
+    }
+
+    & .swiper-slide img {
+      position: relative;
+      z-index: 1;
+      inline-size: 100%;
+      object-fit: cover;
+    }
+
+    & .swiper-button-next::after,
+    & .swiper-button-prev::after {
+      --swiper-navigation-size: 30px;
+      font-weight: var(--font-weight-2);
+    }
+
+    & .swiper-button-prev {
+      --swiper-navigation-sides-offset: -5px;
+    }
+
+    & .swiper-button-next {
+      --swiper-navigation-sides-offset: -2px;
+    }
+  }
+
+  .team {
+    --_team-indent: var(--size-3);
+    isolation: isolate;
+    position: relative;
+    display: block flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: var(--size-7) var(--size-5);
+    min-block-size: 567px;
+    background-color: var(--color-3);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      block-size: 100%;
+      inline-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      inset-block-start: 0;
+      inset-inline: 0;
+      margin-inline: auto;
+      background-image: url('../img/team-glare.svg');
+    }
+
+    &::after {
+      z-index: 1;
+      inset-inline-end: 0;
+      inset-block: 0;
+      margin-block: auto;
+      background-image: url('../img/team-img.svg');
+    }
+
+    & :where(.bold-descr, .team-window) {
+      position: relative;
+      z-index: 10;
+    }
+
+    & .bold-descr {
+      text-align: start;
+      color: var(--color-1);
+
+      & span {
+        display: block flow;
+        padding-block-start: var(--_team-indent);
+      }
+    }
+
+    & .team-window {
+      display: block flex;
+      flex-direction: column;
+      gap: var(--_team-indent);
+      border: 3px solid #36853b;
+      border-radius: 20px;
+      align-self: center;
+      padding: var(--_team-indent);
+      inline-size: clamp(313px, 40vi, 570px);
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(79, 183, 86, 0.7);
+      background: rgba(0, 0, 0, 0.8);
+
+      & p {
+        font-weight: var(--font-weight-2);
+        font-size: 18px;
+        line-height: 122%;
+      }
+    }
+  }
+
   footer {
     --_inner-indent: var(--size-6);
     --_map-height: 225px;
@@ -476,79 +656,5 @@
         font-size: 12px;
       }
     }
-  }
-
-  .team {
-    --_team-indent: var(--size-3);
-    isolation: isolate;
-    position: relative;
-    display: block flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-block: var(--size-7) var(--size-5);
-    min-block-size: 567px;
-    background-color: var(--color-3);
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline: 0;
-      margin-inline: auto;
-      block-size: 100%;
-      inline-size: 100%;
-      background-image: url('../img/glare.svg');
-      background-position: center;
-      background-size: 100%;
-      background-repeat: no-repeat;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset-inline-end: 0;
-      inset-block: 0;
-      margin-block: auto;
-      z-index: 1;
-      block-size: 100%;
-      inline-size: 100%;
-      background-image: url('../img/team-img.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    & :where(.bold-descr, .team-window) {
-      position: relative;
-      z-index: 10;
-    }
-
-    & .bold-descr {
-      text-align: start;
-
-      & span {
-        display: block flow;
-        padding-block-start: var(--_team-indent);
-      }
-    }
-
-    & .team-window {
-      display: block flex;
-      flex-direction: column;
-      gap: var(--_team-indent);
-      border: 3px solid #36853b;
-      border-radius: 20px;
-      align-self: center;
-      padding: var(--_team-indent);
-      inline-size: clamp(313px, 40vi, 570px);
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(79, 183, 86, 0.7);
-      background: rgba(0, 0, 0, 0.8);
-
-      & p {
-        font-weight: var(--font-weight-2);
-        font-size: 18px;
-        line-height: 122%;
-      }
-    }
-
   }
 }
