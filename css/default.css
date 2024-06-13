@@ -38,10 +38,16 @@
   }
 
   .tab {
+    padding-block: 6px;
     border: 2px solid var(--color-4);
     border-radius: 5px;
     font-size: 10px;
     color: var(--color-1);
+  }
+
+  .tab:has(input:checked) {
+    color: var(--color-3);
+    background-color: var(--color-4);
   }
 
   .btn {
