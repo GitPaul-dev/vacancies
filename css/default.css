@@ -96,4 +96,10 @@
     display: none;
   }
 
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    --swiper-navigation-size: 30px;
+    font-weight: var(--font-weight-2);
+  }
+
 }

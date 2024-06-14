@@ -1,13 +1,28 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // const slider1 = new Swiper('.slider-1', {
 
-  // });
+  const productsSliders = document.querySelectorAll('.products-slider');
 
-  // const slider2 = new Swiper('.slider-2', {
+  productsSliders.forEach((item) => {
+    let slider = new Swiper(item, {
+      navigation: {
+        nextEl: item.querySelector('.swiper-button-next'),
+        prevEl: item.querySelector('.swiper-button-prev'),
+      },
 
-  // });
+      pagination: {
+        el: item.querySelector('.swiper-pagination'),
+        type: 'bullets',
+        clickable: 'true',
+      },
 
-  const slider3 = new Swiper('.career-slider', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true,
+    });
+  });
+
+  const slider2 = new Swiper('.career-slider', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -16,6 +31,5 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
-
   });
 });
