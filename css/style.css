@@ -7,6 +7,10 @@
     --animation-default: .3s ease-in-out;
   }
 
+  body:has(.pop-up:popover-open) {
+    overflow-y: clip;
+  }
+
   header {
     --_extreme-elements-width: 20%;
     --_logo-link-width: 127px;
@@ -65,27 +69,37 @@
     }
 
     & .nav-bar {
-      transform: translateX(calc(var(--_nav-bar-inline-size) * -1));
       opacity: 0;
-      transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+      translate: -25vi 30vb;
+      transition: overlay transform opacity;
+      transition-duration: .3s;
+      transition-behavior: allow-discrete;
     }
 
     & .nav-bar:popover-open {
       --_nav-bar-icon-size: 24px;
       inset-block-start: var(--header-height);
+      display: block flex;
+      flex-direction: column;
       padding: 0;
       border: none;
       block-size: calc(100vb - var(--header-height));
       inline-size: var(--_nav-bar-inline-size);
       background-color: var(--color-3);
-      transform: translateX(0);
+      translate: 0;
       opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+        translate: -25vi 0;
+      }
 
       & a {
         position: relative;
         padding-block: var(--size-2);
         padding-inline: calc(var(--container-padding-inline) + var(--_nav-bar-icon-size) + var(--size-3));
         border-bottom: 0.5px solid #255424;
+        font-size: 13px;
         color: var(--color-1);
         text-transform: uppercase;
         box-shadow: 0px 1px 5px -1px rgba(17, 255, 0, 0.5) inset;
@@ -121,7 +135,6 @@
       background: rgba(0, 0, 0, .2);
     }
 
-
     &:has(.nav-bar:popover-open) .nav-bar-btn span {
       transform: rotate(-45deg);
     }
@@ -133,6 +146,19 @@
     &:has(.nav-bar:popover-open) .nav-bar-btn span::after {
       opacity: 0;
       transform: translateY(-8px) rotate(90deg);
+    }
+
+    & .nav-bar nav {
+      margin-block-end: 50px;
+    }
+
+    & .call-btn {
+      --_call-btn-color: var(--color-5);
+      align-self: center;
+      padding: var(--size-1);
+      border: 3px solid var(--_call-btn-color);
+      min-inline-size: 188px;
+      background-color: var(--_call-btn-color);
     }
 
     & .logo-link {
@@ -668,6 +694,152 @@
         font-weight: var(--font-weight-2);
         font-size: 18px;
         line-height: 122%;
+      }
+    }
+  }
+
+  .pop-up {
+    --_indent: var(--size-1);
+    display: none;
+    padding: 0;
+    padding-block-end: var(--size-7);
+    border: 0;
+    inline-size: 100vi;
+    block-size: 100vb;
+    background-color: var(--pop-up-color-1);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition-property: overlay display transform opacity;
+    transition-duration: .6s;
+    transition-behavior: allow-discrete;
+
+    &:popover-open {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 -50vb;
+      }
+    }
+
+    & .pop-up-close {
+      display: block flex;
+      justify-content: flex-end;
+      margin-block-end: var(--size-7);
+      inline-size: 100%;
+      padding-inline-end: var(--_indent);
+      background-color: var(--pop-up-color-2);
+    }
+
+    & :where(form, .form-send) {
+      display: block flex;
+      flex-direction: column;
+      padding-inline: var(--size-3);
+    }
+
+    & span {
+      display: block flow;
+    }
+
+    & form {
+      color: var(--color-1);
+    }
+
+    & label {
+      display: block flow;
+    }
+
+    & :where(.full-name-label, .phone-label, .select-vacancy-label) {
+      border-bottom: 3px solid #999
+    }
+
+    & :where(input, select) {
+      border: none;
+      padding-inline-start: var(--_indent);
+      padding-block: var(--size-2);
+      font-size: 18px;
+      color: var(--color-1);
+      background-color: transparent;
+    }
+
+    & :where(.phone-label, .select-vacancy-label) {
+      margin-block-end: var(--size-3);
+    }
+
+    & select {
+      margin: 0;
+      inline-size: 100%;
+      appearance: none;
+      background-image: url("../img/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: right var(--_indent) center;
+    }
+
+    & select option {
+      background-color: var(--pop-up-color-2);
+    }
+
+    & .attach-resume-title {
+      margin-block-end: var(--size-2);
+    }
+
+    & p.form-descr {
+      margin-block-end: var(--size-2);
+    }
+
+    & .attach-resume {
+      margin-block-end: var(--size-5);
+
+      & .btn {
+        inline-size: fit-content;
+        background-color: var(--color-5);
+      }
+    }
+
+    & .form-descr {
+      font-size: 10px;
+      line-height: 150%;
+    }
+
+    .checkbox-agree-label {
+      display: block grid;
+      grid-auto-flow: column;
+      gap: var(--size-0);
+      margin-block-end: var(--size-5);
+
+      & input {
+        align-self: self-start;
+      }
+    }
+
+    & .btn {
+      align-self: center;
+      padding-inline: var(--size-5);
+    }
+
+    & .form-send {
+      align-items: center;
+
+      & h2 {
+        padding-block-end: 75px;
+      }
+
+      & svg {
+        margin-block-end: var(--size-7);
+      }
+
+      & p {
+        margin-block-end: 100px;
+        max-inline-size: 240px;
+        font-weight: var(--font-weight-2);
+        font-size: 18px;
+        text-align: center;
+      }
+
+      & p span {
+        padding-block-start: var(--size-2);
       }
     }
   }

@@ -32,4 +32,26 @@ window.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 10,
     loop: true,
   });
+
+  const popUpCloseBtn = document.getElementById('pop-up-close')
+  const popupForm = document.getElementById('pop-up-form');
+  const formSendDiv = document.getElementById('form-send');
+  const formSendCloseBtn = document.getElementById('form-send-close');
+
+  popupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    popupForm.classList.add('invisible');
+    formSendDiv.classList.remove('invisible');
+  });
+
+  function classToggle(firstEl, secondEl, clickedBtn, className) {
+    clickedBtn.addEventListener('click', () => {
+      firstEl.classList.add(className);
+      secondEl.classList.remove(className);
+    });
+  }
+
+  classToggle(formSendDiv, popupForm, popUpCloseBtn, 'invisible');
+  classToggle(formSendDiv, popupForm, formSendCloseBtn, 'invisible');
 });

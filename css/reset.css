@@ -66,6 +66,10 @@
     font: inherit;
   }
 
+  select {
+    cursor: pointer;
+  }
+
   address {
     font-style: normal;
   }

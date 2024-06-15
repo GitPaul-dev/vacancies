@@ -76,6 +76,11 @@
     transform: scale(0);
   }
 
+  .invisible {
+    position: fixed;
+    transform: scale(0);
+  }
+
   p {
     font-weight: var(--font-weight-1);
     color: var(--color-1);
@@ -85,6 +90,11 @@
     inline-size: 100%;
     block-size: 100%;
     cursor: pointer;
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
   }
 
   .spoiler :where(h3, h4) {
