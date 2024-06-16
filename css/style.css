@@ -788,7 +788,11 @@
     }
 
     & :where(.full-name-label, .phone-label, .select-vacancy-label) {
-      border-bottom: 3px solid #999
+      border-bottom: 3px solid var(--color-4)
+    }
+
+    & .pop-up-input:invalid {
+      color: var(--color-8);
     }
 
     & :where(input, select) {
@@ -802,6 +806,17 @@
 
     & :where(.phone-label, .select-vacancy-label) {
       margin-block-end: var(--size-3);
+    }
+
+    & :where(.full-name-label, .phone-label) {
+      position: relative;
+    }
+
+    & .form-error {
+      position: absolute;
+      padding-block-start: 3px;
+      font-size: 14px;
+      color: var(--color-8);
     }
 
     & select {
@@ -832,6 +847,12 @@
         inline-size: fit-content;
         background-color: var(--color-5);
       }
+
+      & .btn:hover,
+      & .btn:focus {
+        background-color: var(--color-10);
+        border-color: var(--color-10);
+      }
     }
 
     & .form-descr {
@@ -853,12 +874,6 @@
     & .btn {
       align-self: center;
       padding-inline: var(--size-5);
-
-      &:hover,
-      &:focus {
-        background-color: #11501c;
-        border-color: #11501c;
-      }
     }
 
     & .form-send {
@@ -1020,7 +1035,7 @@
       }
 
       & li:nth-child(1) a:hover svg {
-        fill: #ff0000;
+        fill: var(--color-8);
       }
 
       & li:nth-child(2) a:hover svg path {

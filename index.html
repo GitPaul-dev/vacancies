@@ -1271,10 +1271,12 @@
       <form id="pop-up-form" method="POST">
         <h2>Заполните анкету</h2>
         <label class="full-name-label">
-          <input type="text" placeholder="Ф.И.О">
+          <input id="name-input" class="pop-up-input" type="text" pattern="^[а-яА-Яa-zA-Z]+$" placeholder="Ф.И.О">
+          <span id="name-error" class="form-error"></span>
         </label>
         <label class="phone-label">
-          <input type="tel" placeholder="Телефон">
+          <input id="phone-input" class="pop-up-input" type="tel" pattern="^\d+$" placeholder="Телефон">
+          <span id="phone-error" class="form-error"></span>
         </label>
         <h3>Отклик на вакансию</h3>
         <label class="select-vacancy-label">

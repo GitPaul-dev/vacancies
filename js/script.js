@@ -56,17 +56,59 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Появление окна, подтверждающего отправку формы
+  // Валидация формы и переключение на окно подтверждения отправки формы
   const popUpCloseBtn = document.getElementById('pop-up-close')
   const popupForm = document.getElementById('pop-up-form');
   const formSendDiv = document.getElementById('form-send');
   const formSendCloseBtn = document.getElementById('form-send-close');
+  const nameInput = document.getElementById('name-input');
+  const phoneInput = document.getElementById('phone-input');
+  const nameErr = document.getElementById('name-error');
+  const phoneErr = document.getElementById('phone-error');
+
+  function isValidName(name) {
+    const pattern = /^[а-яА-Яa-zA-Z]+$/;
+    return pattern.test(name);
+  }
+
+  function isValidPhone(phone) {
+    const pattern = /^\d+$/;
+    return pattern.test(phone);
+  }
 
   popupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    if (!nameInput.value && !phoneInput.value) {
+      nameErr.innerHTML = '*value';
+      phoneErr.innerHTML = '*value';
+      return;
+    }
+
+    if (!nameInput.value) {
+      nameErr.innerHTML = '*value';
+      return;
+    }
+
+    if (!phoneInput.value) {
+      phoneErr.innerHTML = '*value';
+      return;
+    }
+
+    if (!isValidName(nameInput.value)) {
+      nameErr.innerHTML = '*value';
+      return;
+    }
+
+    if (!isValidPhone(phoneInput.value)) {
+      phoneErr.innerHTML = '*value';
+      return;
+    }
+
     popupForm.classList.add('invisible');
     formSendDiv.classList.remove('invisible');
+
+    popupForm.reset();
   });
 
   function classToggle(firstEl, secondEl, clickedBtn, className) {
