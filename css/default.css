@@ -1,36 +1,125 @@
 @layer default {
 
+  :focus {
+    outline: transparent;
+  }
+
   body {
     font-family: GothamPro, system-ui, sans-serif;
   }
 
+  section {
+    padding-block: var(--size-7);
+  }
+
   h1 {
     font-size: 30px;
-    line-height: 120%;
-    text-transform: uppercase;
+    line-height: var(--line-height-1);
     text-align: center;
+    color: var(--color-1);
   }
 
   h2,
   .bold-descr {
+    padding-block-end: var(--size-5);
     font-weight: var(--font-weight-2);
-    font-size: 18px;
+    font-size: var(--font-size-4);
+    text-align: center;
+    color: var(--color-4);
+  }
+
+  h1,
+  h2,
+  .tab,
+  .bold-descr {
     text-transform: uppercase;
-    color: #999;
+  }
+
+  .tab-wrapper {
+    display: block flex;
+    flex-wrap: wrap;
+    gap: var(--size-1);
+  }
+
+  .tab {
+    padding-block: 6px;
+    border: 2px solid var(--color-4);
+    border-radius: 5px;
+    font-size: var(--font-size-0);
+    color: var(--color-1);
+  }
+
+  .tab:has(input:checked) {
+    color: var(--color-3);
+    background-color: var(--color-4);
   }
 
   .btn {
+    padding-inline: var(--size-4);
+    padding-block: var(--size-1);
+    border-radius: var(--btn-border-radius);
     font-weight: var(--font-weight-2);
-    font-size: 12px;
-    line-height: 167%;
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-4);
     text-align: center;
+    text-transform: uppercase;
+    color: var(--color-1);
+    background-color: var(--color-8);
+
+    &:hover,
+    &:focus {
+      background-color: #901016;
+    }
+  }
+
+  .call-btn:hover,
+  .call-btn:focus,
+  .attach-resume .btn:hover,
+  .attach-resume .btn:focus {
+    background-color: #11501c;
   }
 
   a {
     font-weight: var(--font-weight-2);
   }
 
+  .hidden-input {
+    position: fixed;
+    padding: 0;
+    outline: none;
+    appearance: none;
+    pointer-events: none;
+    transform: scale(0);
+  }
+
+  .invisible {
+    position: fixed;
+    transform: scale(0);
+  }
+
   p {
     font-weight: var(--font-weight-1);
+    color: var(--color-1);
   }
+
+  input:focus,
+  select:focus {
+    outline: none;
+  }
+
+  .spoiler :where(h3, h4) {
+    font-size: var(--font-size-3);
+    color: var(--color-1);
+  }
+
+  .spoiler-descr {
+    display: none;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    --swiper-navigation-size: 30px;
+    font-weight: var(--font-weight-2);
+  }
+
 }
