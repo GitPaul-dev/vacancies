@@ -159,6 +159,12 @@
       border: 3px solid var(--_call-btn-color);
       min-inline-size: 188px;
       background-color: var(--_call-btn-color);
+
+      &:hover,
+      &:focus {
+        background-color: #11501c;
+        border-color: #11501c;
+      }
     }
 
     & .logo-link {
@@ -847,6 +853,12 @@
     & .btn {
       align-self: center;
       padding-inline: var(--size-5);
+
+      &:hover,
+      &:focus {
+        background-color: #11501c;
+        border-color: #11501c;
+      }
     }
 
     & .form-send {
@@ -936,6 +948,11 @@
         padding-inline-start: calc(var(--_contacts-icon-size) + var(--_contacts-icon-padding));
       }
 
+      & li:last-of-type a:hover,
+      & li:last-of-type a:focus {
+        text-decoration: none;
+      }
+
       & a::before {
         content: "";
         position: absolute;
@@ -993,6 +1010,26 @@
       display: block flex;
       justify-content: center;
       gap: var(--size-4);
+
+      & li:nth-child(1) a svg {
+        fill: var(--color-4);
+      }
+
+      & li:not(:nth-child(1)) a svg path {
+        fill: var(--color-4);
+      }
+
+      & li:nth-child(1) a:hover svg {
+        fill: #ff0000;
+      }
+
+      & li:nth-child(2) a:hover svg path {
+        fill: #007bff;
+      }
+
+      & li:nth-child(3) a:hover svg path {
+        fill: #1776db;
+      }
     }
 
     & .requisites-wrapper {
@@ -1012,7 +1049,15 @@
 
     & .requisites {
       margin-block-end: var(--size-2);
-      text-decoration: underline;
+
+      & a {
+        text-decoration: underline;
+      }
+
+      & a:hover,
+      & a:focus {
+        text-decoration: none;
+      }
 
       & li:last-child a {
         font-size: 12px;

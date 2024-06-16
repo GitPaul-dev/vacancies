@@ -65,6 +65,18 @@
     text-transform: uppercase;
     color: var(--color-1);
     background-color: var(--color-8);
+
+    &:hover,
+    &:focus {
+      background-color: #901016;
+    }
+  }
+
+  .call-btn:hover,
+  .call-btn:focus,
+  .attach-resume .btn:hover,
+  .attach-resume .btn:focus {
+    background-color: #11501c;
   }
 
   a {
