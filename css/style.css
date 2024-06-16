@@ -12,7 +12,7 @@
   }
 
   header {
-    --_extreme-elements-width: 20%;
+    --_extreme-elements-width: clamp(99px, 20vi, 193px);
     --_logo-link-width: 127px;
     --_nav-bar-inline-size: 270px;
     position: fixed;
@@ -85,7 +85,7 @@
       border: none;
       block-size: calc(100vb - var(--header-height));
       inline-size: var(--_nav-bar-inline-size);
-      background-color: var(--color-3);
+      background-color: var(--color-2);
       translate: 0;
       opacity: 1;
 
@@ -177,11 +177,14 @@
     }
 
     & .phones {
-      --_extreme-elements-width: 26%;
       font-size: 9px;
       line-height: 167%;
       text-align: center;
       color: var(--color-1);
+
+      & a {
+        text-align: end;
+      }
     }
   }
 
@@ -197,7 +200,7 @@
     min-block-size: 500px;
     background-image: url('../img/hero-img.webp');
     background-repeat: no-repeat;
-    background-size: 243%;
+    background-size: clamp(360px, 242%, 1000px);
     background-position: 75% 43%;
 
     & p {
@@ -221,17 +224,19 @@
 
     & :where(ul, li) {
       display: block flex;
-      flex-direction: column;
-      align-items: center;
       gap: var(--_about-gap);
     }
 
-    & li {
-      --_about-gap: var(--size-2);
+    & ul {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
 
-    & li:first-child span {
+    & li {
+      flex-direction: column;
+      align-items: center;
       max-inline-size: 230px;
+      --_about-gap: var(--size-2);
     }
 
     & span {
@@ -255,9 +260,18 @@
   }
 
   .vacancies {
-    display: block flex;
-    flex-direction: column;
+    align-items: center;
     background-color: var(--color-3);
+
+    &,
+    & .container {
+      display: block flex;
+      flex-direction: column;
+    }
+
+    & .container {
+      inline-size: min(650px, 100%);
+    }
 
     & h2 {
       text-align: start;
@@ -265,6 +279,7 @@
 
     & .tab-wrapper {
       margin-block-end: var(--size-5);
+      max-inline-size: 450px;
     }
 
     & .tab {
@@ -305,13 +320,14 @@
       border-radius: 30px;
       padding: 30px;
 
-      & div {
+      &>div {
         position: relative;
       }
 
       & :where(h4, .salary) {
         position: relative;
         padding-inline-start: var(--size-5);
+        inline-size: clamp(260px, 80%, 370px);
       }
 
       & h4 {
@@ -440,18 +456,19 @@
     }
 
     & .spoiler-descr {
+      max-inline-size: 650px;
       padding-block-start: var(--size-3);
     }
   }
 
   .products {
     --_tab-gap: var(--size-0);
-    --_slide-height: 148px;
-    --_slider-padding: 21px;
+    --_slide-height: clamp(148px, 30vi, 301px);
+    --_slider-padding: clamp(21px, 5vi, 50px);
     --_slide-border-width: 5px;
     --_slide-border-radius: 10px;
-    --swiper-navigation-top-offset: 40%;
-    --swiper-pagination-bullet-size: 15px;
+    --swiper-navigation-top-offset: clamp(95px, 20vi, 200px);
+    --swiper-pagination-bullet-size: clamp(15px, 3vi, 25px);
     --swiper-pagination-color: var(--color-1);
     --swiper-pagination-bullet-inactive-color: var(--color-9);
     --swiper-pagination-bullet-horizontal-gap: 6px;
@@ -494,7 +511,7 @@
     & .swiper-slide div {
       border-radius: var(--_slide-border-radius);
       inline-size: 100%;
-      min-block-size: var(--_slide-height);
+      block-size: var(--_slide-height);
       background-color: var(--color-6);
     }
 
@@ -504,7 +521,7 @@
 
     & .swiper-slide.swiper-slide-active div {
       border-radius: var(--_slide-border-radius);
-      transform: scale(1.1, 1.2);
+      transform: scaleY(1.2);
       box-shadow: 0 0 0 5px rgba(217, 217, 217, 0.25);
     }
 
@@ -528,11 +545,12 @@
   .career {
     --_slide-gap: var(--size-2);
     --_slide-img-size: calc(100vi / 3 * 2);
-    --swiper-navigation-top-offset: calc(var(--_slide-img-size) / 2);
+    --swiper-navigation-top-offset: 130px;
     background-color: var(--color-2);
 
     &>p {
       margin-block-end: var(--size-5);
+      max-inline-size: 700px;
       font-weight: var(--font-weight-2);
       font-size: 14px;
       line-height: 143%;
@@ -644,8 +662,8 @@
       position: absolute;
       block-size: 100%;
       inline-size: 100%;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center;
     }
 
     &::before {
@@ -653,6 +671,7 @@
       inset-inline: 0;
       margin-inline: auto;
       background-image: url('../img/team-glare.svg');
+      background-size: cover;
     }
 
     &::after {
@@ -661,6 +680,7 @@
       inset-block: 0;
       margin-block: auto;
       background-image: url('../img/team-img.svg');
+      background-size: 430px;
     }
 
     & :where(.bold-descr, .team-window) {
@@ -669,6 +689,9 @@
     }
 
     & .bold-descr {
+      align-self: center;
+      inline-size: fit-content;
+      max-inline-size: 605px;
       text-align: start;
       color: var(--color-1);
 
@@ -700,11 +723,14 @@
 
   .pop-up {
     --_indent: var(--size-1);
+    inset-inline: 0;
     display: none;
+    margin-inline: auto;
     padding: 0;
     padding-block-end: var(--size-7);
     border: 0;
     inline-size: 100vi;
+    max-inline-size: 360px;
     block-size: 100vb;
     background-color: var(--pop-up-color-1);
     opacity: 0;
@@ -722,6 +748,10 @@
         opacity: 0;
         translate: 0 -50vb;
       }
+    }
+
+    &::backdrop {
+      background: rgba(0, 0, 0, .2);
     }
 
     & .pop-up-close {
@@ -846,7 +876,7 @@
 
   footer {
     --_inner-indent: var(--size-6);
-    --_map-height: 225px;
+    --_map-height: clamp(225px, 40vi, 380px);
     --social-svg-size: 50px;
     padding-block: var(--size-7);
     background-color: var(--color-2);
@@ -861,6 +891,9 @@
 
     & address {
       position: relative;
+      display: block flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     & .tab-wrapper {
@@ -882,6 +915,7 @@
 
       & ul {
         margin-block-end: calc(var(--_inner-indent) * 2 + var(--social-svg-size));
+        max-inline-size: 450px;
       }
 
       & li:not(:last-of-type) {
@@ -935,15 +969,20 @@
 
       & .map iframe {
         border: 0;
+        inline-size: 100vi;
       }
     }
 
     & .tab-wrapper:has(.tab:first-of-type input:checked)~.contacts:first-of-type {
-      display: block flow;
+      display: block flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     & .tab-wrapper:has(.tab:last-of-type input:checked)~.contacts:last-of-type {
-      display: block flow;
+      display: block flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     & .social-links {

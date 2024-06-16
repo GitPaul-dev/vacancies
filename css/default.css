@@ -1,5 +1,9 @@
 @layer default {
 
+  :focus {
+    outline: transparent;
+  }
+
   body {
     font-family: GothamPro, system-ui, sans-serif;
   }
@@ -84,12 +88,6 @@
   p {
     font-weight: var(--font-weight-1);
     color: var(--color-1);
-  }
-
-  label {
-    inline-size: 100%;
-    block-size: 100%;
-    cursor: pointer;
   }
 
   input:focus,

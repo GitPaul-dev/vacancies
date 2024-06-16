@@ -15,6 +15,23 @@ window.addEventListener('DOMContentLoaded', () => {
         clickable: 'true',
       },
 
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        slideShadows: true,
+      },
+
+      breakpoints: {
+        480: {
+          spaceBetween: 40,
+        },
+
+        740: {
+          spaceBetween: 50,
+        },
+      },
+
+      initialSlide: 2,
       slidesPerView: 2,
       spaceBetween: 30,
       loop: true,
@@ -31,8 +48,15 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
+
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+      },
+    }
   });
 
+  // Появление окна, подтверждающего отправку формы
   const popUpCloseBtn = document.getElementById('pop-up-close')
   const popupForm = document.getElementById('pop-up-form');
   const formSendDiv = document.getElementById('form-send');
