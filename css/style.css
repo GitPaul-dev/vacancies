@@ -99,7 +99,7 @@
         padding-block: var(--size-2);
         padding-inline: calc(var(--container-padding-inline) + var(--_nav-bar-icon-size) + var(--size-3));
         border-bottom: 0.5px solid #255424;
-        font-size: 13px;
+        font-size: calc(var(--font-size-2) - 1px);
         color: var(--color-1);
         text-transform: uppercase;
         box-shadow: 0px 1px 5px -1px rgba(17, 255, 0, 0.5) inset;
@@ -183,8 +183,8 @@
     }
 
     & .phones {
-      font-size: 9px;
-      line-height: 167%;
+      font-size: calc(var(--font-size-0) - 1px);
+      line-height: var(--line-height-1);
       text-align: center;
       color: var(--color-1);
 
@@ -213,7 +213,7 @@
       margin-block-end: var(--size-5);
       padding-block-start: var(--size-2);
       font-weight: var(--font-weight-2);
-      font-size: 18px;
+      font-size: var(--font-size-4);
       color: var(--color-1);
     }
 
@@ -253,8 +253,8 @@
       border: 1px solid var(--color-7);
       border-radius: 5px;
       font-weight: var(--font-weight-2);
-      font-size: 24px;
-      line-height: 167%;
+      font-size: var(--font-size-5);
+      line-height: var(--line-height-1);
       color: var(--color-5);
       background: rgba(0, 0, 0, 0.7);
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 10px 0 #b6ffba;
@@ -342,7 +342,7 @@
 
       & .salary {
         margin-block-end: var(--size-1);
-        font-size: 16px;
+        font-size: var(--font-size-3);
         font-weight: var(--font-weight-2);
         text-transform: uppercase;
         color: var(--color-5);
@@ -357,18 +357,18 @@
 
       & :where(h5, li p) {
         font-weight: var(--font-weight-2);
-        font-size: 12px;
+        font-size: var(--font-size-1);
         color: #fff;
       }
 
       & h5 {
-        line-height: 200%;
+        line-height: var(--line-height-6);
       }
 
       & li {
         position: relative;
         padding-inline-start: var(--size-3);
-        line-height: 100%;
+        line-height: var(--line-height-0);
       }
 
       & li::before {
@@ -558,8 +558,8 @@
       margin-block-end: var(--size-5);
       max-inline-size: 700px;
       font-weight: var(--font-weight-2);
-      font-size: 14px;
-      line-height: 143%;
+      font-size: var(--font-size-2);
+      line-height: var(--line-height-3);
 
       & span {
         display: block flow;
@@ -578,22 +578,22 @@
     }
 
     & h3 {
-      font-size: 16px;
-      line-height: 125%;
+      font-size: var(--font-size-3);
+      line-height: var(--line-height-2);
       text-align: center;
       color: var(--color-1);
 
       & span {
         display: block flow;
         font-weight: var(--font-weight-1);
-        font-size: 14px;
+        font-size: var(--font-size-2);
       }
     }
 
     & .swiper-slide li {
       position: relative;
       padding-inline-start: var(--size-4);
-      font-size: 14px;
+      font-size: var(--font-size-2);
     }
 
     & .swiper-slide li:not(:last-child) {
@@ -721,8 +721,8 @@
 
       & p {
         font-weight: var(--font-weight-2);
-        font-size: 18px;
-        line-height: 122%;
+        font-size: var(--font-size-4);
+        line-height: var(--line-height-1);
       }
     }
   }
@@ -799,7 +799,7 @@
       border: none;
       padding-inline-start: var(--_indent);
       padding-block: var(--size-2);
-      font-size: 18px;
+      font-size: var(--font-size-4);
       color: var(--color-1);
       background-color: transparent;
     }
@@ -815,7 +815,7 @@
     & .form-error {
       position: absolute;
       padding-block-start: 3px;
-      font-size: 14px;
+      font-size: var(--font-size-2);
       color: var(--color-8);
     }
 
@@ -856,8 +856,8 @@
     }
 
     & .form-descr {
-      font-size: 10px;
-      line-height: 150%;
+      font-size: var(--font-size-0);
+      line-height: var(--line-height-4);
     }
 
     .checkbox-agree-label {
@@ -891,7 +891,7 @@
         margin-block-end: 100px;
         max-inline-size: 240px;
         font-weight: var(--font-weight-2);
-        font-size: 18px;
+        font-size: var(--font-size-4);
         text-align: center;
       }
 
@@ -937,7 +937,7 @@
       --_contacts-icon-size: 32px;
       --_contacts-icon-padding: var(--size-1);
       display: none;
-      font-size: 12px;
+      font-size: var(--font-size-1);
       color: var(--color-1);
 
       & ul {
@@ -955,7 +955,7 @@
 
       & li:last-of-type a {
         text-decoration: underline;
-        line-height: 208%;
+        line-height: var(--line-height-6);
       }
 
       & a {
@@ -1052,8 +1052,8 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      font-size: 14px;
-      line-height: 143%;
+      font-size: var(--font-size-2);
+      line-height: var(--line-height-3);
       color: var(--color-1);
     }
 
@@ -1075,7 +1075,7 @@
       }
 
       & li:last-child a {
-        font-size: 12px;
+        font-size: var(--font-size-1);
       }
     }
   }

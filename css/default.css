@@ -14,7 +14,7 @@
 
   h1 {
     font-size: 30px;
-    line-height: 120%;
+    line-height: var(--line-height-1);
     text-align: center;
     color: var(--color-1);
   }
@@ -23,7 +23,7 @@
   .bold-descr {
     padding-block-end: var(--size-5);
     font-weight: var(--font-weight-2);
-    font-size: 18px;
+    font-size: var(--font-size-4);
     text-align: center;
     color: var(--color-4);
   }
@@ -45,7 +45,7 @@
     padding-block: 6px;
     border: 2px solid var(--color-4);
     border-radius: 5px;
-    font-size: 10px;
+    font-size: var(--font-size-0);
     color: var(--color-1);
   }
 
@@ -59,8 +59,8 @@
     padding-block: var(--size-1);
     border-radius: var(--btn-border-radius);
     font-weight: var(--font-weight-2);
-    font-size: 12px;
-    line-height: 167%;
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-4);
     text-align: center;
     text-transform: uppercase;
     color: var(--color-1);
@@ -108,7 +108,7 @@
   }
 
   .spoiler :where(h3, h4) {
-    font-size: 16px;
+    font-size: var(--font-size-3);
     color: var(--color-1);
   }
 
