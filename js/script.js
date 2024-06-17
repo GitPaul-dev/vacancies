@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const slider2 = new Swiper('.career-slider', {
+  let slider2 = new Swiper('.career-slider', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -56,7 +56,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Валидация формы и переключение на окно подтверждения отправки формы
+  // Валидация полей ФИО и телефон в форме,
+  // переключение на окно подтверждения отправки формы
   const popUpCloseBtn = document.getElementById('pop-up-close')
   const popupForm = document.getElementById('pop-up-form');
   const formSendDiv = document.getElementById('form-send');
