@@ -19,10 +19,11 @@
 
 <body>
   <header>
-    <button class="nav-bar-btn" popovertarget="nav-bar" popovertargetaction="toggle">
+    <label class="nav-bar-btn">
+      <input type="checkbox" class="hidden-input">
       <span></span>
-    </button>
-    <dialog id="nav-bar" class="nav-bar" popover>
+    </label>
+    <div class="nav-bar">
       <nav>
         <ul>
           <li><a href="https://pplk.ru/" target="_blank">Главная</a></li>
@@ -31,7 +32,7 @@
         </ul>
       </nav>
       <button popovertarget="pop-up-window" class="btn call-btn">Заказать звонок</button>
-    </dialog>
+    </div>
     <a class="logo-link" href="/">
       <img src="./img/logo-1.svg" alt="Логотип компании Пестовский лесокомбинат">
     </a>
