@@ -8,13 +8,13 @@
 
   body {
     margin: 0;
+    margin-inline: auto;
   }
 
   header,
   section:not(:first-of-type),
   article,
   footer {
-    margin-inline: auto;
     padding-inline: var(--container-padding-inline);
   }
 

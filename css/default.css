@@ -5,11 +5,21 @@
   }
 
   body {
+    max-inline-size: var(--max-website-width);
     font-family: GothamPro, system-ui, sans-serif;
+    overflow-x: clip;
+  }
+
+  @media (width >=992px) {
+
+    body {
+      font-family: system-ui, sans-serif;
+    }
   }
 
   section {
-    padding-block: var(--size-7);
+    --section-padding-block: var(--size-7);
+    padding-block: var(--section-padding-block);
   }
 
   h1 {
@@ -114,6 +124,13 @@
 
   .spoiler-descr {
     display: none;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition:
+      display var(--animation-default),
+      transform var(--animation-default),
+      opacity var(--animation-default);
+    transition-behavior: allow-discrete;
   }
 
   .swiper-button-next::after,

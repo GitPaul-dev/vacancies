@@ -42,5 +42,7 @@
     --pop-up-color-2: #1b1b1b;
 
     --btn-border-radius: 30px;
+
+    --max-website-width: 160ch;
   }
 }

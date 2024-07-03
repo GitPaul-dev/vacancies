@@ -29,6 +29,10 @@ window.addEventListener('DOMContentLoaded', () => {
         740: {
           spaceBetween: 50,
         },
+
+        991: {
+          spaceBetween: 80,
+        },
       },
 
       initialSlide: 2,
